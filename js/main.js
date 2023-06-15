@@ -72,12 +72,19 @@ function manipulaDados(op, controle) {
   }
 }
 
-function atualizaEstatisticas(peca) {
-  estatisticas.forEach((elemento) => {
-    console.log(elemento.dataset.estatistica);
-    console.log(pecas[peca]);
-    elemento.textContent =
-      parseInt(elemento.textContent) +
-      pecas[peca][elemento.dataset.estatistica];
-  });
+function atualizaEstatisticas(peca, op) {
+  if (op == "+") {
+    estatisticas.forEach((elemento) => {
+      elemento.textContent =
+        parseInt(elemento.textContent) +
+        pecas[peca][elemento.dataset.estatistica];
+    });
+  }
+  if (op == "-") {
+    estatisticas.forEach((elemento) => {
+      elemento.textContent =
+        parseInt(elemento.textContent) -
+        pecas[peca][elemento.dataset.estatistica];
+    });
+  }
 }
