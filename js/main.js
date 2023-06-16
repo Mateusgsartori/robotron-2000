@@ -50,7 +50,10 @@ const paths = [
 controle.forEach((elemento) => {
   elemento.addEventListener("click", (evento) => {
     manipulaDados(evento.target.dataset.controle, evento.target.parentNode);
-    atualizaEstatisticas(evento.target.dataset.pecas);
+    atualizaEstatisticas(
+      evento.target.dataset.pecas,
+      evento.target.dataset.controle
+    );
   });
 });
 
